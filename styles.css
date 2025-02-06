@@ -1,0 +1,178 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1240px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.hero {
+  background-color: #FF002E;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  padding-left: 50px;
+}
+
+.hero h1 {
+  margin-bottom: 10px;
+  font-size: 64px;
+  font-weight: 400;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  
+}
+
+.black-btn {
+  background-color: black;
+  color: white;
+  padding: 10px 50px;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.black-btn:hover {
+  background-color: white;
+  color: black;
+}
+
+.white-btn {
+  background-color: white;
+  color: black;
+  padding: 10px 50px;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.white-btn:hover {
+  background-color: gray;
+}
+
+/* Layout principal */
+.section {
+  display: flex;
+  gap: 10px;
+}
+
+/* Esquerda: B1 + B2, B3, B4 */
+.column-left {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 10px;
+}
+
+.b1 {
+  background-color: #FFD600;
+  padding: 20px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  flex: 1;
+  height: 200px;
+}
+
+/* Pequenos blocos B2, B3 e B4 */
+.small-boxes {
+  display: flex;
+  gap: 10px;
+  flex: 1;
+}
+
+.b2, .b3, .b4 {
+  background-color: #FFD600;
+  height: 200px;
+  flex: 1;
+  padding: 20px;
+  text-align: center;
+  align-content: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Direita: Bloco C */
+.column-right {
+  flex: 1;
+  display: flex;
+}
+
+.c {
+  background-color: #00FF94;
+  padding: 20px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  flex: 1;
+  align-content: center;
+}
+
+/* Bloco D */
+.d {
+  background-color: #0FD4FF;
+  padding: 20px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  height: 400px;
+  align-content: center;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .section {
+      flex-direction: column;
+  }
+
+  .small-boxes {
+      flex-direction: row;
+      flex-wrap: wrap;
+  }
+
+  .small-boxes .box {
+      flex: 1 1 calc(33.33% - 10px);
+  }
+
+  .d {
+      width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .buttons {
+      flex-direction: column;
+  }
+
+  .small-boxes {
+      flex-direction: column;
+  }
+
+  .small-boxes .box {
+      flex: 1 1 100%;
+  }
+}
